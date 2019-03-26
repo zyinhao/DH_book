@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/main/index",
+    "pages/setting/index",
+    "pages/add/index",
+    "pages/statistics/index",
+    "pages/feedback/index",
+    "pages/about/index",
+    "pages/history/index"
+  ],
+  "window": {
+    "backgroundColor": "#F0F8FF",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "我的小账",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#87CEEB",
+    "list": [
+      {
+        "pagePath": "pages/main/index",
+        "text": "账单",
+        "iconPath": "images/book.png",
+        "selectedIconPath": "images/bookd.png"
+      },
+      {
+        "pagePath": "pages/add/index",
+        "text": "记账",
+        "iconPath": "images/add.png",
+        "selectedIconPath": "images/addd.png"
+      },
+      {
+        "pagePath": "pages/statistics/index",
+        "text": "统计",
+        "iconPath": "images/statistics.png",
+        "selectedIconPath": "images/statisticsd.png"
+      },
+      {
+        "pagePath": "pages/setting/index",
+        "text": "设置",
+        "iconPath": "images/setting.png",
+        "selectedIconPath": "images/settingd.png"
+      }
+    ]
+  }
+}

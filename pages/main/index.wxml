@@ -1,0 +1,69 @@
+<page>
+  <view class="book-main">
+    <view class='tcenter'>
+      <!-- 头像 -->
+      <image class='avatar' src='{{userInfo.avatarUrl}}'></image>
+    </view>
+    <!-- 本月余额 -->
+    <view class='tcenter balance-wrapper'>
+      <text class='fontblod'>{{data.diffCount}}</text>
+      <text class='block balance-text'>本月余额</text>
+    </view>
+    <!-- 本月收入/支出 -->
+    <view class='flex month-wrapper'>
+      <view class='tcenter balance-wrapper width0 flex1'>
+        <text class='fontblod'>{{data.income}}</text>
+        <text class='block '>本月收入</text>
+      </view>
+      <view class='vdivider flex0'></view>
+      <view class='tcenter balance-wrapper width0 flex1'>
+        <text class='fontblod'>{{data.expenditure}}</text>
+        <text class='block '>本月支出</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 菜单栏 -->
+  <view class='flex menu-wrapper'>
+    <view class='tcenter'>
+      <image class='menu-img' src='../../images/mybooks.png'></image>
+      <text class='block menu-name'>我的账本</text>
+    </view>
+  </view>
+
+  <!-- 没有数据现实的提示 -->
+  <view wx:if="{{records.length<=0}}" class='no-data'>赶紧去添加一笔小账吧</view>
+
+  <!-- 最近添加的记录 -->
+  <view class='record-list'>
+    <!-- 分组的头部信息 -->
+    <view wx:for="{{records}}" wx:key="{{index}}" wx:for-index="outerIndex">
+      <view class='record-date flex'>
+        <view>{{item.date}}</view>
+        <view class="textright">
+          <text wx:if="{{item.income>0}}">收入：{{item.income}}</text>
+          <text wx:if="{{item.expenditure>0}}" class='date-expenditure'>支出：{{item.expenditure}}</text>
+        </view>
+
+      </view>
+      <!-- 分组的具体项 -->
+      <view wx:for="{{item.records}}" wx:key="_id" class='item' bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" data-outer="{{outerIndex}}">
+        <view class='list-item__small flex tright' style="{{item.txtStyle}}">
+          <view class='item-content'>
+            <view class='record-left'>
+              <text class='record-type v-center ' style="background-color:{{item.typeValue==1?'#87CEEB':'red'}};">{{item.typeText}}</text>
+              <text class='record-income v-center '>{{item.incomeName}}</text>
+              <text class='record-desc v-center '>{{item.desc}}</text>
+            </view>
+            <view class='record-right'>
+              <text class='record-count' style="color:{{item.typeValue==1?'#87CEEB':'red'}};">{{item.count}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='item-del' bindtap='delItem' data-index="{{index}}" data-outer="{{outerIndex}}" >
+          <text>删除</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</page>

@@ -1,0 +1,27 @@
+@import '../../style/guide.wxss';
+
+.book-setting {
+  background: #87ceeb;
+  padding-bottom: 40rpx;
+  padding-top: 10rpx;
+}
+
+.avatar {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.userName {
+  display: block;
+}
+
+.setting-menu {
+  text-align: left;
+  border-top: 2rpx solid #ebebeb;
+}
+
+.setting-menu__item {
+  justify-content: space-between;
+}

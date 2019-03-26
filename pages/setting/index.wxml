@@ -1,0 +1,18 @@
+<view class="book-setting tcenter">
+  <image class='avatar' src='{{userInfo.avatarUrl}}'></image>
+  <text class='userName tcenter'>{{userInfo.nickName}}</text>
+</view>
+
+<!-- 设置区域 -->
+<view class="page-center setting-menu">
+  <view class='input-item setting-menu__item flex' bindtap="handleItem" data-name="feedback">
+    <text>问题反馈</text>
+    <image class='input-icon' src='../../images/rightarrow.png'></image>
+  </view>
+  <view class='input-item setting-menu__item flex' bindtap="handleItem" data-name="about">
+    <text>关于小账</text>
+    <image class='input-icon' src='../../images/rightarrow.png'></image>
+  </view>
+
+
+</view>
